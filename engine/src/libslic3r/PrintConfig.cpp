@@ -5632,6 +5632,28 @@ void PrintConfigDef::init_fff_params()
     def->mode = comAdvanced;
     def->set_default_value(new ConfigOptionInt(0));
 
+    def = this->add("nonplanar_curved_top_walls", coInt);
+    def->label = L("Curved top walls");
+    def->category = L("Quality");
+    def->tooltip = L("Wall loops along the edge of the outermost curved top layer of Curved tops, at most the wall loops. "
+                     "Default: 1. Unit: loops.");
+    def->sidetext = L("loops");
+    def->min = 0;
+    def->max = 10;
+    def->mode = comAdvanced;
+    def->set_default_value(new ConfigOptionInt(1));
+
+    def = this->add("nonplanar_curved_shell_walls", coInt);
+    def->label = L("Curved shell walls");
+    def->category = L("Quality");
+    def->tooltip = L("Wall loops along the edge of each curved layer under the outermost curved top layer of Curved tops, "
+                     "at most the wall loops. 0 leaves the edges of those layers without walls. Default: 1. Unit: loops.");
+    def->sidetext = L("loops");
+    def->min = 0;
+    def->max = 10;
+    def->mode = comAdvanced;
+    def->set_default_value(new ConfigOptionInt(1));
+
     def = this->add("nonplanar_curved_min_area", coFloat);
     def->label = L("Minimum curved top area");
     def->category = L("Quality");

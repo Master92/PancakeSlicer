@@ -47,7 +47,7 @@ const ROTARY_AUTO_TUNING = ['nonplanar_full_conformal_max_thickness', 'nonplanar
 interface MethodRows { main: string[]; tuning: string[]; clearance: string[] }
 const METHOD_ROWS: Record<string, MethodRows> = {
   off: { main: [WAVE, ZAA, 'nonplanar_sublayer_walls'], tuning: [], clearance: [] },
-  nonplanar_top: { main: [TOP_LAYERS, TOP_DIRECTION, 'nonplanar_sublayer_walls'],
+  nonplanar_top: { main: [TOP_LAYERS, 'nonplanar_curved_top_walls', 'nonplanar_curved_shell_walls', TOP_DIRECTION, 'nonplanar_sublayer_walls'],
     tuning: ['nonplanar_top_finish_flow', 'nonplanar_top_order', 'nonplanar_curved_shell_flow', 'nonplanar_curved_shell_speed', 'nonplanar_curved_min_area'],
     clearance: CLEARANCE.slice(0, 4) },
   smooth_morph: { main: [TOP_LAYERS, 'nonplanar_morph_layers', TOP_DIRECTION],

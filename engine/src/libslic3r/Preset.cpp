@@ -1418,7 +1418,7 @@ static std::vector<std::string> s_Preset_print_options{
     "nonplanar_fallback", "nonplanar_full_conformal_max_thickness", "nonplanar_surface_resolution", "nonplanar_max_patch_height", "nonplanar_collision_check", "nonplanar_repair_iterations", "nonplanar_road_cooling", "nonplanar_steep_skin", "nonplanar_oneshot_routes", "nonplanar_oneshot_fan_step", "nonplanar_sublayer_walls", "nonplanar_auto_support", "nonplanar_support_interface",
     "nonplanar_atom_toolpath", "nonplanar_field_file",
     "nonplanar_overhangs", "nonplanar_bridges",
-    "nonplanar_continuous_top", "nonplanar_curved_max_angle", "nonplanar_ignore_duct", "nonplanar_collision_tolerance", "nonplanar_duct_graze_limit", "nonplanar_curved_top_layers", "nonplanar_curved_min_area", "nonplanar_curved_shell_speed", "nonplanar_curved_shell_flow", "nonplanar_morph_layers",
+    "nonplanar_continuous_top", "nonplanar_curved_max_angle", "nonplanar_ignore_duct", "nonplanar_collision_tolerance", "nonplanar_duct_graze_limit", "nonplanar_curved_top_layers", "nonplanar_curved_min_area", "nonplanar_curved_shell_speed", "nonplanar_curved_shell_flow", "nonplanar_curved_top_walls", "nonplanar_curved_shell_walls", "nonplanar_morph_layers",
     "nonplanar_conformal_rounding", "nonplanar_conformal_fallback_angle", "nonplanar_conformal_ramp_layers",
     "nonplanar_wave", "nonplanar_wave_amplitude", "nonplanar_wave_wavelength",
     "nonplanar_wave_pattern", "nonplanar_wave_direction",

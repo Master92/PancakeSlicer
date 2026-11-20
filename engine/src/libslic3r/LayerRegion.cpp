@@ -199,10 +199,9 @@ void LayerRegion::make_perimeters(const SurfaceCollection &slices, const LayerRe
             SurfaceCollection one;
             one.surfaces.push_back(surface);
             PrintRegionConfig shell_config = this->region().config();
-            if (surface.distance_to_top >= 0.f && surface.distance_to_top < 1e-4f)
-                shell_config.wall_loops.value = std::min(shell_config.wall_loops.value, 1);
-            else
-                shell_config.wall_loops.value = 0;
+            const bool outermost = surface.distance_to_top >= 0.f && surface.distance_to_top < 1e-4f;
+            shell_config.wall_loops.value = std::min(shell_config.wall_loops.value,
+                outermost ? shell_config.nonplanar_curved_top_walls.value : shell_config.nonplanar_curved_shell_walls.value);
             perimeters_begin = this->perimeters.entities.size();
             thin_begin       = this->thin_fills.entities.size();
             this->make_perimeters_generator(one, compatible_regions, fill_surfaces, fill_no_overlap, &shell_config, false);

@@ -1029,6 +1029,8 @@ void ConfigManipulation::toggle_print_fff_options(DynamicPrintConfig *config, in
     bool has_ironing = (config->opt_enum<IroningType>("ironing_type") != IroningType::NoIroning);
     const NonplanarMode nonplanar_mode   = config->opt_enum<NonplanarMode>("nonplanar_mode");
     toggle_line("nonplanar_curved_max_angle", curved_tops_mode(nonplanar_mode));
+    toggle_line("nonplanar_curved_top_walls", curved_tops_mode(nonplanar_mode));
+    toggle_line("nonplanar_curved_shell_walls", curved_tops_mode(nonplanar_mode));
     toggle_line("nonplanar_curved_top_layers", curved_tops_mode(nonplanar_mode) || nonplanar_mode == NonplanarMode::ConformalLayers ||
                                                    nonplanar_mode == NonplanarMode::SmoothMorph);
     toggle_line("nonplanar_conformal_ramp_layers", nonplanar_mode == NonplanarMode::ConformalLayers);

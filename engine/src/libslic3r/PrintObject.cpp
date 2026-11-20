@@ -2323,6 +2323,8 @@ bool PrintObject::invalidate_state_by_config_options(
             || opt_key == "nonplanar_adaptive_bands"
             || opt_key == "nonplanar_infill_depth"
             || opt_key == "nonplanar_strength_roads"
+            || opt_key == "nonplanar_curved_top_walls"
+            || opt_key == "nonplanar_curved_shell_walls"
             || opt_key == "nonplanar_ironing"
             || opt_key == "nonplanar_overhangs"
             || opt_key == "nonplanar_bridges"

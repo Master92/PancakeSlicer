@@ -2560,6 +2560,8 @@ void TabPrint::build()
         optgroup->append_single_option_line("nonplanar_collision_tolerance");
         optgroup->append_single_option_line("nonplanar_duct_graze_limit");
         optgroup->append_single_option_line("nonplanar_curved_top_layers");
+        optgroup->append_single_option_line("nonplanar_curved_top_walls");
+        optgroup->append_single_option_line("nonplanar_curved_shell_walls");
         optgroup->append_single_option_line("nonplanar_conformal_ramp_layers");
         optgroup->append_single_option_line("nonplanar_deform");
         optgroup->append_single_option_line("multiplanar_max_planes");

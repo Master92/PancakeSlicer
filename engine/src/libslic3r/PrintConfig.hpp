@@ -1546,6 +1546,8 @@ PRINT_CONFIG_CLASS_DEFINE(
     ((ConfigOptionBool,                      nonplanar_ironing))
     ((ConfigOptionFloat,                     nonplanar_top_finish_flow))
     ((ConfigOptionFloat,                     nonplanar_curved_shell_flow))
+    ((ConfigOptionInt,                       nonplanar_curved_top_walls))
+    ((ConfigOptionInt,                       nonplanar_curved_shell_walls))
     ((ConfigOptionFloats,                    nonplanar_tilt_flow))
     ((ConfigOptionPercent,                   nonplanar_top_speed_factor))
     ((ConfigOptionPercent,                   nonplanar_top_fan_boost))

@@ -16,6 +16,7 @@ export const SHORT_LABELS: Record<string, string> = {
   nonplanar_curved_top_layers: 'Top layers', nonplanar_top_direction: 'Top direction', nonplanar_top_finish_flow: 'Top flow', nonplanar_top_order: 'Line order',
   nonplanar_top_speed_factor: 'Top speed', nonplanar_top_fan_boost: 'Top fan boost', nonplanar_road_cooling: 'Line cooling',
   nonplanar_curved_shell_flow: 'Shell flow', nonplanar_curved_shell_speed: 'Shell speed', nonplanar_curved_min_area: 'Min top area',
+  nonplanar_curved_top_walls: 'Top walls', nonplanar_curved_shell_walls: 'Shell walls',
   nonplanar_max_patch_height: 'Max band height', nonplanar_conformal_ramp_layers: 'Ramp layers', nonplanar_conformal_rounding: 'Shell rounding',
   nonplanar_conformal_fallback_angle: 'Fallback angle',
   nonplanar_slant_angle: 'Tilt', nonplanar_slant_direction: 'Direction', nonplanar_slant_start_height: 'Start height', nonplanar_slant_morph_layers: 'Morph layers',
