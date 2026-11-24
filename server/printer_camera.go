@@ -25,6 +25,7 @@ type cameraSource struct {
 	Format   string `json:"format"`
 	URL      string `json:"url"`
 	upstream string
+	fallback string
 }
 type cameraPacket struct {
 	data []byte
@@ -260,6 +261,7 @@ func cameraSources(ctx context.Context, p *PrinterConfig) ([]cameraSource, error
 		if err != nil || typed == "" {
 			return
 		}
+		relative := u.Host == ""
 		u = base.ResolveReference(u)
 		if u.Scheme != "http" && u.Scheme != "https" || u.User != nil || u.Fragment != "" {
 			return
@@ -268,6 +270,13 @@ func cameraSources(ctx context.Context, p *PrinterConfig) ([]cameraSource, error
 			return
 		}
 		add(name, "mjpeg", u.String())
+		if relative && u.Port() != "" {
+			alt := *u
+			alt.Host = strings.TrimSuffix(u.Host, ":"+u.Port())
+			if alt.String() != u.String() {
+				out[len(out)-1].fallback = alt.String()
+			}
+		}
 	}
 	if p.Kind == "moonraker" {
 		var response struct {
@@ -320,7 +329,12 @@ func runCamera(ctx context.Context, p *PrinterConfig, camera cameraSource, emit 
 		}
 		return jpegCamera(ctx, p, secret, emit)
 	}
-	return httpCamera(ctx, p, camera.upstream, emit)
+	delivered := false
+	err := httpCamera(ctx, p, camera.upstream, func(data []byte, init bool) { delivered = true; emit(data, init) })
+	if camera.fallback != "" && !delivered && ctx.Err() == nil {
+		return httpCamera(ctx, p, camera.fallback, emit)
+	}
+	return err
 }
 
 func cameraTLS(ctx context.Context, p *PrinterConfig, port int) (net.Conn, error) {
